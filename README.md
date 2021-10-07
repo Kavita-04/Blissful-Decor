@@ -18,4 +18,5 @@ This is an E-commerce website having decoration items. It includes selling and p
 S.no.| Name
 ---- | -------
 1    | Kavita
-2    | Sakshi Sharma
+2    | Nishant
+3    | Sakshi Sharma
