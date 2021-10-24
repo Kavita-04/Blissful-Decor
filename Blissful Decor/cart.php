@@ -8,7 +8,7 @@ if (!isset($_SESSION['email'])) {
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Cart | Life Style Store</title>
+        <title>Cart | BlissfulDecor </title>
         <link href="css/bootstrap.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
         
