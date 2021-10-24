@@ -11,7 +11,7 @@ if (isset($_SESSION['email'])) {
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Login | Life Style Store</title>
+        <title>Login | Blissful Decor </title>
 
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
