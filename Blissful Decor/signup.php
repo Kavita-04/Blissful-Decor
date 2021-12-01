@@ -11,16 +11,19 @@ if (isset($_SESSION['email'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Signup | Blissful Decor </title>
         <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="css/myStyle.css" rel="stylesheet">
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         
     </head>
     <body>
         <?php include 'includes/header.php'; ?>
         <div class="container-fluid decor_bg" id="content">
             <div class="row">
+                <center><h2>Sign Up</h2> <hr>
                 <div class="container">
-                    <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3">
-                        <h2>SIGN UP</h2>
+                    <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3" id="signup-container"><br>
+                       
                         <form  action="signup_script.php" method="POST">
                             <div class="form-group">
                                 <input class="form-control" placeholder="Name" name="name"  required = "true" pattern="^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]{0,}$">
@@ -39,16 +42,15 @@ if (isset($_SESSION['email'])) {
                                 <?php if (array_key_exists('m3',$_GET)){ echo $_GET['m3'];} ?>
                         
                             </div>
-                            <div class="form-group">
-                                <input  type="text" class="form-control"  placeholder="City" name="city" required = "true">
-                            </div>
+
                             <div class="form-group">
                                 <input  type="text" class="form-control"  placeholder="Address" name="address" required = "true">
                             </div>
-                            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" name="submit" class="btn btn-primary">Submit</button><br><br>
                         </form>
                     </div>
                 </div>
+            </center>
             </div>
         </div>
         <?php include "includes/footer.php"; ?>
