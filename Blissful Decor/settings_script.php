@@ -10,6 +10,7 @@ $old_pass = $_POST['old-password'];
 $old_pass = mysqli_real_escape_string($con, $old_pass);
 
 
+
 $new_pass = $_POST['password'];
 $new_pass = mysqli_real_escape_string($con, $new_pass);
 
@@ -21,7 +22,7 @@ $new_pass1 = mysqli_real_escape_string($con, $new_pass1);
 $query = "SELECT email, password FROM users WHERE email ='" . $_SESSION['email'] . "'";
 $result = mysqli_query($con, $query)or die($mysqli_error($con));
 $row = mysqli_fetch_array($result);
-$orig_pass = $row['password'];
+$orig_pass = base64_decode($row['password']);
 
 if ($new_pass != $new_pass1) {
 	$error="<span class='red'>New and Confirmed password do not match</span>";
@@ -29,10 +30,10 @@ if ($new_pass != $new_pass1) {
 } else {
     if ($old_pass == $orig_pass) 
     {
-        $query = "UPDATE  users SET password = '" . $new_pass . "' WHERE email = '" . $_SESSION['email'] . "'";
+
+        $query = "UPDATE  users SET password = '" . base64_encode($new_pass) . "' WHERE email = '" . $_SESSION['email'] . "'";
         mysqli_query($con, $query) or die($mysqli_error($con));
-		$error="<span class='red'>Password Updated</span>";
-        header('location: settings.php?error=' .$error);
+        header('location: settings.php?updated=1');
     } 
     else
     {
